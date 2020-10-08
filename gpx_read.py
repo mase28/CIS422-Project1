@@ -10,9 +10,8 @@ def get_coordinates(file: str) -> list:
 	for track in gpx.tracks:
 		for segment in track.segments:
 			for point in segment.points:
-				result.append((point.latitude, point.longitude))
+				result.append([point.longitude, point.latitude])
 
 	gpx_file.close()
 
 	return result
-
