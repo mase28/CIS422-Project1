@@ -1,4 +1,5 @@
 import re
+import json
 from gpx_read import get_coordinates
 from create_route import get_path
 
@@ -7,11 +8,11 @@ if __name__ == "__main__":
 
 	ret = get_path([ls[0], ls[len(ls)-1]])
 
-	# print(ret)
-	ret_ls = re.findall('[<](.*?)[>]', ret)
-
-	new_ls = []
-	for i in range(len(ret_ls)):
-		if ret_ls[i][0:5] == "rtept":
-			new_ls.append(ret_ls[i])
-	print(new_ls)
+	js = json.loads(ret)
+	for keys in js:
+		if keys == "features":
+			temp = js["features"][0]
+			for key in temp:
+				if key == "geometry":
+					print(temp[key]["coordinates"])
+	
