@@ -9,7 +9,7 @@ def get_path(coords) -> str:
     	'Content-Type': 'application/json; charset=utf-8'
 	}
 	
-	call = requests.post('https://api.openrouteservice.org/v2/directions/driving-car/gpx', json=body, headers=headers)
+	call = requests.post('https://api.openrouteservice.org/v2/directions/driving-car/geojson', json=body, headers=headers)
 	
 	return call.text
 
