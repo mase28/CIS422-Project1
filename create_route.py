@@ -1,4 +1,5 @@
 import requests
+import json
 
 def get_path(coords) -> str:
 	body = {"coordinates":coords}
@@ -13,4 +14,14 @@ def get_path(coords) -> str:
 	
 	return call.text
 
+def get_coordinates_json(json_input):
+	js = json.loads(json_input)
+	coords = {}
+	for keys in js:
+		if keys == "features":
+			temp = js["features"][0]
+			for key in temp:
+				if key == "geometry":
+					coords = temp[key]["coordinates"]
+	return coords
 	
