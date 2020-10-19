@@ -27,8 +27,8 @@ def allowed_file(filename):
 
 
 # Decorators; Modifies the function that follows it.
-@app.route('/upload_file', methods=["POST", "GET"])
-def upload():
+@app.route('/', methods=["POST", "GET"])
+def index():
     if request.method == "POST":
         if request.files:
             gpx = request.files["gpxFile"]
