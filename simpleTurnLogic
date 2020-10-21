@@ -1,16 +1,11 @@
 """
-Simple interpretation of the track
+Simple interpretation of turn and distance
 """
-#get coordinates from GPX file
-#convert all coordinates to UTM, store in data structure/tuple
-# code is written with lat and long but the confusing part is the negatives of longitude values
+
 #Logic should also work with UTM if we get Lat/Long-UTM converter to work
 #Easier to think of turns in UTM system, based on turn-logic
-#we still have to do something about streetnames
-#but we've seen that we've been able to get street-names from a Route Service
-
 #file -> list of tuples. each tuple has latitude, longitude, time
-#covert all latitude, longitude pairs to UTM? Or Not
+#covert all latitude, longitude pairs to UTM? or not necessarily
 
 """
 how to determine turns:
@@ -34,7 +29,6 @@ Case 3: easting increasing between 1, 2, 3+; northing same
 Case 4: easting decreasing between 1, 2, 3+; northing same 
 How to define same: deviation by .5 meter? 1 meter is about 39.4 inches.
 If each trackpoint is 1 second, then 20 inches of minor-axis variation in one second seems about enough? 
-Is this a bike-ride?
 "Same" is not really the same but per segment, one axis has a lot less variation than the other axis
 .5 meter, or any measurement in terms of meters, is easy to work with UTM
 """
@@ -60,7 +54,9 @@ latDiffTotal
 longDiffTotal
 """
 #function returns the difference of the two points on the axis of greater difference for those 2 points
-def compare(point1, point2):
+#That will determine the direction of the segment
+#so the distance of that segment will stop when axis of greater difference changes after a turn
+def compareAxes(point1, point2):
     latDiff =point2.lat - point1.lat
     longDiff = point2.long - point1.long
     #absolute value for longitude?
@@ -79,15 +75,12 @@ def differencesOnSegment():
             totalLatDiff += compare(pointA, pointB)
         if compare(pointA, pointB) == compare(pointA, pointB).longDiff:
             totalLongDiff += compare(pointA, pointB)
-
     #when loop stops
     if(totalLatDiff > totalLongDiff):
         return "vertical"
     if (totalLongDiff > totalLatDiff):
         return "horizontal"
 
-    #how to determine where segment of a single direction starts and stops
-    #if we don't get any turns resulting, then we might need to add some margin of error to point 4
 def pointIsTurn(point1, point2, point3, point4, point5):
     #Case1
     if (point1.long > point2.long):  # 2 points have same-ish latitude, 2nd point has less longitude
