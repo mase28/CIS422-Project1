@@ -1,13 +1,18 @@
 """routes are the different URLs that the application implements"""
 
-from app import app    # importing the app variable from the app
+
 from flask import render_template, request, redirect  # Converts a template into a complete HTML page
 import os
 from werkzeug.utils import secure_filename
+import flask
+from flask import Flask
+
+app = Flask(__name__)    # instance of class Flask in the __init__.py script
 
 
 # File path for saving the upload
-app.config["FILE_UPLOADS"] = "/Users/briagray/PycharmProjects/Project1_Prototypes/app/static/file/uploads"
+app.config["FILE_UPLOADS"] = "./static/file/uploads"
+app.config["API_KEYS_UPLOADS"] = "./static/apiKeys"
 
 # Accepted file types
 app.config["ALLOWED_FILE_EXTENSIONS"] = ["GPX"]
@@ -30,28 +35,48 @@ def allowed_file(filename):
 @app.route('/', methods=["POST", "GET"])
 def index():
     if request.method == "POST":
+        if request.form.get:
+            api = request.form.get("api-key")
+            print(api)
+            with open(os.path.join(app.config["API_KEYS_UPLOADS"], "api_key.txt"), "w") as filename:
+                filename.write(api)
+            print("API KEY saved.")
+
         if request.files:
             gpx = request.files["gpxFile"]
 
 # Checks to make sure the file has a file name
             if gpx.filename == "":
                 print("File must have a file name")
-                return redirect(request.url)
+                return render_template("Wrong.html")
 
 # Checks to see if the file is in gpx format
             if not allowed_file(gpx.filename):
                 print("That is not the correct file type")
-                return redirect(request.url)
+                return render_template("Wrong.html")
 
 # Corrects any harmful file names
             else:
                 filename = secure_filename(gpx.filename)
 
 # If all is correct it will save the file to the given path
-            gpx.save(os.path.join(app.config["FILE_UPLOADS"], filename))
+            full_path = os.path.join(app.config["FILE_UPLOADS"], filename)
+            gpx.save(full_path)
 
             print("Image has been saved!")
 
+            run_program(full_path)
+
 # Redirects back to the initial page
-            return redirect(request.url)
+            return render_template("Results.html")
     return render_template("upload_file.html")
+
+
+def run_program(path: str, key: str):
+    """ This is where the program is called."""
+    return print("Program ran")
+
+
+
+
+
