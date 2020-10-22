@@ -67,6 +67,3 @@ def main(file: str, api: str):
 	f = open("./app/templates/output.html", "w")
 	f.write(output_first)
 	f.close()
-
-if __name__ == "__main__":
-	main("gpx_file.gpx", "pk.eyJ1IjoibWFzZTI4IiwiYSI6ImNrZ2U1NjdraDA4OGUycXBpZHlsOWxyZnYifQ.sYRLp9MeUZeUNbTMzCM5AA")
