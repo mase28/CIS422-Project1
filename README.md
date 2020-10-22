@@ -1,23 +1,22 @@
 # CIS422-Project1
 
-AUTHORS OF THIS PROJECT:
+1. AUTHORS OF THIS PROJECT:
 Bria Gray 
 Mason Olsen 
 Shoshanah Bernhardt
 
 
-TO RUN THE PROGRAM:
+2. TO RUN THE PROGRAM:
 
-A. MAPBOX ACCOUNT AND ACCESS TOKEN 
+A. Mapbox account and Access Token 
 
 Before trying to run the program, please create a token with Mapbox. These instructions to create a token assume that you have never created
 a token for Mapbox. If that assumptions is not true, you may be able to modify these instructions. 
 
-1. Account Creation:
-
-First, please create an account at account.mapbox.com. If you have an account, please sign in with your username and password. 
+1. Account Creation: First, please create an account at account.mapbox.com. If you have an account, please sign in with your username and password. 
 
 2. Sign Up Or Sign In:
+
 If you do not have an account, please click "Sign up for Mapbox" under the button marked "Sign In."
 If you have an account, but you've forgotten your password, please click "Forgot your password" under the button 
 marked "Sign In" and follow the prompts.
