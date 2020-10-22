@@ -79,9 +79,14 @@ Click on the clipboard icon next to your token, the one that does not say "defau
 
 Next person explain run or build process starting from copied token with B. [insert step name 
 
+check to make sure we've included:
+3. INPUT SHOULD LOOK LIKE
 
+4. OUTPUT SHOULD LOOK LIKE
 
+5. BUILD PROCESS
 
+6. HOW TO USE THE PROGRAM
 
 
 
