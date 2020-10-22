@@ -13,15 +13,15 @@ A. Mapbox account and Access Token
 Before trying to run the program, please create a token with Mapbox. These instructions to create a token assume that you have never created
 a token for Mapbox. If that assumptions is not true, you may be able to modify these instructions. 
 
-1. Account Creation: First, please create an account at account.mapbox.com. If you have an account, please sign in with your username and password. 
+1. Account Creation: 
 
-2. Sign Up Or Sign In:
-
+First, please create an account at account.mapbox.com or sign into your account if existing. 
+If you have an account, please sign in with your username and password. 
 If you do not have an account, please click "Sign up for Mapbox" under the button marked "Sign In."
 If you have an account, but you've forgotten your password, please click "Forgot your password" under the button 
 marked "Sign In" and follow the prompts.
 
-3. Enter Requested Information:
+2. Enter Requested Information:
 
 To create an account, after you've clicked "Sign up for Mapbox," you will see a page called "Create Your Mapbox Account."
 If you already have an account, but you've reached this page erroneously, please click on "Log In" and follow the steps from there.
@@ -38,7 +38,7 @@ Once you've entered your username, email addresss, and password in the correspon
 fields marked "Optional," agreed to the Terms of Service and Privacy Policy, and checked the box indicating your agreeement, 
 please click the button marked "Get Started."
 
-4. Email verification:
+3. Email verification:
 
 If prompted by your browser to save your password, then please make the appropriate selection in the dialog box, according to your preference.
 The next screen will prompt you to check your email account for an email message with verification instructions.
@@ -50,14 +50,14 @@ then please click on "contact support" and follow the prompts from there.
 When you've found the verification email from Team Mapbox with the subject of "Verify Your Email," please open the message.
 Please read the message and click on the button in the middle of the message that says "Verify my email".
 
-5. Password Confirmation:
+4. Password Confirmation:
 
 The next stage will prompt you to "confirm your password" by entering your password, so please enter your Mapbox account's password
 and click on the button marked "Submit". If you've forgotten your password, then please click on the "Forgot Your Password"
 link and follow the instructions from there. 
 Once you've correctly typed your password in the "Password" field and clicked on the "Submit" button, then you'll reach your account.
 
-6. Account Management To Create Access Token:
+5. Account Management To Create Access Token:
 
 From the page that you first see your Mapbox account name, plan, and current billing cycle usage, please scroll down to the bottom of the page
 to the section marked "Access tokens."
@@ -68,7 +68,7 @@ The next screen will prompt you to set the settings for your access token. You m
 but a name for the token is not required. The settings for the Token Scopes and Token Restrictions, you may leave as default.
 When you're satisfied with the settings you've entered or selected, please click the blue button marked "Create a token".
 
-7. See and Copy Your Token: 
+6. See and Copy Your Token: 
 
 After clicking the blue button marked "Create a token", you'll be prompted to confirm your password, 
 so please enter your password and click "submit".
