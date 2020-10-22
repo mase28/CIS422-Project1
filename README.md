@@ -3,6 +3,7 @@
 TO RUN THE PROGRAM:
 
 A. MAPBOX ACCOUNT AND ACCESS TOKEN 
+
 Before trying to run the program, please create a token with Mapbox. These instructions to create a token assume that you have never created
 a token for Mapbox. If that assumptions is not true, you may be able to modify these instructions. 
 
@@ -15,6 +16,7 @@ If you have an account, but you've forgotten your password, please click "Forgot
 marked "Sign In" and follow the prompts.
 
 3. Enter requested information
+
 To create an account, after you've clicked "Sign up for Mapbox," you will see a page called "Create Your Mapbox Account."
 If you already have an account, but you've reached this page erroneously, please click on "Log In" and follow the steps from there.
 To create your account, please fill in the information on the "Create Your Mapbox Account" page. Please fill in all the required information.
