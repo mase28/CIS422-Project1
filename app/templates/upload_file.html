@@ -1,5 +1,4 @@
 
-
 {%block main %}
 
 <div class="container">
@@ -20,10 +19,21 @@
                     </div>
                 </div>
 
-            <button type="submit" class="btn btn-primary">Upload File</button>
+            <form action="/" method="POST" name="api-key">
+                <div class="field">
+                    <label class="label">API Key</label>
+                    <div class="control">
+                     <input class="input" type="text" name="api-key" id="api-key"/>
+                </div>
+             </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
             </form>
+            </form>
+
+
         </div>
     </div>
 </div>
 
 {% endblock %}
+
