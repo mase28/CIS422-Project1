@@ -1,2 +1,2 @@
-web: gunicorn --chdir app routes:cis422-project1
+web: gunicorn --chdir app routes:app
 routes:app --timeout 200
