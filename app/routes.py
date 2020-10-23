@@ -45,6 +45,7 @@ def index():
 
         if request.files:
             gpx = request.files["gpxFile"]
+            print(gpx)
 
 # Checks to make sure the file has a file name
             if gpx.filename == "":
@@ -59,6 +60,7 @@ def index():
 # Corrects any harmful file names
             else:
                 filename = secure_filename(gpx.filename)
+                print(filename)
 
 # If all is correct it will save the file to the given path
             full_path = os.path.join(app.config["FILE_UPLOADS"], filename)
