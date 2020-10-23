@@ -10,23 +10,50 @@ def get_directions(path: str) -> list:
 	for x in text["matchings"]:
 		for y in x["legs"]:
 			for z in y["steps"]:
-				directions.append(z["maneuver"]["instruction"] + " in " + str(z["distance"]) + " KM")
+				directions.append(z["maneuver"]["instruction"] + " in " + str(round(z["distance"] / 1000, 2)) + " KM")
 	return directions
 
 def remove_directions(directions: list) -> list:
-	#Function that removes unhelpful directions
+	#Function that removes each "You have arrived" directions except the last one
+	#and combines the distances from all the "Head (direction)..." instructions
 	new_dir = []
-	prev = []
-	for i in range(len(directions)):
+	prev = ""
+	i = 0
+	while i < (len(directions)):
 		direction = directions[i].split(" ")
-		direction_str = " ".join(direction[:len(direction) - 3])
 		if direction[0] == "You"  and i != len(directions) - 1:
+			i += 1
 			continue
-		elif direction_str in prev or direction[0] == "Head" or len(direction) == 5:
-			continue
+		elif direction[0] == "Head":
+			distance = float(direction[len(direction) - 2])
+			for j in range(i+1, len(directions)):
+				if j >= len(directions) - 1:
+					i = j+1
+					break
+				distance += float(direction[len(direction) - 2])
+				direction = directions[j].split(" ")
+				if direction[0] != "Head" and direction[0] != "You" and len(direction) > 5:
+					direction[len(direction) - 2] = str(round(distance, 2))
+					new_dir.append(" ".join(direction))
+					i = j + 1
+					break
 		else:
-			prev.append(direction_str)
-			new_dir.append(directions[i])
+			if i <= len(directions) - 1 and len(direction) > 5:
+				curr_street = " ".join(direction[3:(len(direction)-3)])
+				distance = float(direction[len(direction)-2])
+				while True:
+					i += 1 
+					next_dir = directions[i].split(" ")
+					next_street = " ".join(next_dir[3:(len(next_dir)-3)])
+					if (curr_street == next_street):
+						distance += float(next_dir[len(next_dir)-2])
+					else:
+						direction[len(direction)-2] = str(round(distance))
+						new_dir.append(" ".join(direction))
+						break
+			elif len(direction) > 5:
+				new_dir.append(directions[i])
+			i += 1
 	return new_dir
 
 def main(file: str, api: str):
@@ -44,6 +71,8 @@ def main(file: str, api: str):
 		end_path += 100
 
 	new_dir = remove_directions(directions)
+	for i in new_dir:
+		print(i)
 
 	output_first = (
     "<html lang=\"en\">\n"
