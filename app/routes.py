@@ -1,14 +1,15 @@
 """routes are the different URLs that the application implements"""
 
 
-from flask import render_template, request, redirect  # Converts a template into a complete HTML page
+from flask import render_template, request  # Converts a template into a complete HTML page
 import os
 from werkzeug.utils import secure_filename
-import flask
 from flask import Flask
+from map_box import *
+
 
 app = Flask(__name__)    # instance of class Flask in the __init__.py script
-
+#from app import app
 
 # File path for saving the upload
 app.config["FILE_UPLOADS"] = "./static/file/uploads"
@@ -65,15 +66,16 @@ def index():
 
             print("Image has been saved!")
 
-            run_program(full_path)
+            run_program(full_path, api)
 
 # Redirects back to the initial page
-            return render_template("Results.html")
+            return render_template("output.html")
     return render_template("upload_file.html")
 
 
 def run_program(path: str, key: str):
     """ This is where the program is called."""
+    main(path, key)
     return print("Program ran")
 
 
