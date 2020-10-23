@@ -81,30 +81,9 @@ If that doesn't work when you run the program, then try copying the token with t
 B. Navigate to Website
 
 Now click https://cis422-project1.herokuapp.com/ to open the app. When the app opens, select the desired gpx file and enter your created 
-mapbox api key into the api key text box. Then press run. If the gpx file has a large amount of coordinates, run time may take a while. 
+mapbox api key into the api key text box. Then press submit. If the gpx file has a large amount of coordinates, run time may take a while. 
 Once submit has been pressed, the app will start running although the screen will not change. Once the results are calculated, then 
 the results will be posted onto the screen.
 
+Website will look like:
 ![picture](https://github.com/mase28/CIS422-Project1/blob/main/CIS422app.PNG?raw=true)
-
-check to make sure we've included:
-3. INPUT SHOULD LOOK LIKE
-
-4. OUTPUT SHOULD LOOK LIKE
-
-5. BUILD PROCESS
-
-6. HOW TO USE THE PROGRAM
-
-
-
-
-What is supposed to be in this document:
-
--What the input should look like
--How to use the program
--What output should look like
--Authors
--Build process 
-
-
