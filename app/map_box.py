@@ -1,5 +1,4 @@
 from gpx_read import get_coordinates_gpx
-import requests
 import json
 from create_route import get_path
 
@@ -57,6 +56,7 @@ def remove_directions(directions: list) -> list:
 	return new_dir
 
 def main(file: str, api: str):
+	print("In Main")
 	ls = get_coordinates_gpx(file)
 
 	start = 0
@@ -93,6 +93,6 @@ def main(file: str, api: str):
 
 	output_first += output_sec
 
-	f = open("./app/templates/output.html", "w")
+	f = open("./templates/output.html", "w")
 	f.write(output_first)
 	f.close()

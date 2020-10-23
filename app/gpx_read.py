@@ -3,6 +3,7 @@ import gpxpy.gpx
 
 #Opens gpx file and stores coordinates in a list of tuples
 def get_coordinates_gpx(file: str) -> list:
+	print("In Get coordinates")
 	gpx_file = open(file, 'r')
 	gpx = gpxpy.parse(gpx_file)
 	result = []
