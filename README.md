@@ -85,7 +85,7 @@ mapbox api key into the api key text box. Then press run. If the gpx file has a 
 Once submit has been pressed, the app will start running although the screen will not change. Once the results are calculated, then 
 the results will be posted onto the screen.
 
-![picture](https://github.com/mase28/CIS422-Project1/CIS422app.PNG?raw=true)
+![picture](https://github.com/mase28/CIS422-Project1/CIS422app.PNG)
 
 check to make sure we've included:
 3. INPUT SHOULD LOOK LIKE
