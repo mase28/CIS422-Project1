@@ -78,7 +78,14 @@ or with the name "Untitled" if you didn't enter a name.
 Click on the clipboard icon next to the default token, to copy the default token. 
 If that doesn't work when you run the program, then try copying the token with the name you gave.
 
-Next person explain run or build process starting from copied token with B. [insert step name ]
+B. Navigate to Website
+
+Now click https://cis422-project1.herokuapp.com/ to open the app. When the app opens, select the desired gpx file and enter your created 
+mapbox api key into the api key text box. Then press run. If the gpx file has a large amount of coordinates, run time may take a while. 
+Once submit has been pressed, the app will start running although the screen will not change. Once the results are calculated, then 
+the results will be posted onto the screen.
+
+![alt text](https://github.com/mase28/CIS422-Project1/CIS422app.png?raw=true)
 
 check to make sure we've included:
 3. INPUT SHOULD LOOK LIKE
