@@ -75,9 +75,10 @@ so please enter your password and click "submit".
 If you've forgotten your password, please click "Forgot your password" and follow the prompts.
 Once you've created a token, on the next screen you'll see a default public token and a token with the name you chose 
 or with the name "Untitled" if you didn't enter a name. 
-Click on the clipboard icon next to your token, the one that does not say "default public token", to copy your token.
+Click on the clipboard icon next to the default token, to copy the default token. 
+If that doesn't work when you run the program, then try copying the token with the name you gave.
 
-Next person explain run or build process starting from copied token with B. [insert step name 
+Next person explain run or build process starting from copied token with B. [insert step name ]
 
 check to make sure we've included:
 3. INPUT SHOULD LOOK LIKE
