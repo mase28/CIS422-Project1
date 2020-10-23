@@ -16,7 +16,6 @@ def remove_directions(directions: list) -> list:
 	#Function that removes each "You have arrived" directions except the last one
 	#and combines the distances from all the "Head (direction)..." instructions
 	new_dir = []
-	prev = ""
 	i = 0
 	while i < (len(directions)):
 		direction = directions[i].split(" ")
@@ -56,7 +55,6 @@ def remove_directions(directions: list) -> list:
 	return new_dir
 
 def main(file: str, api: str):
-	print("In Main")
 	ls = get_coordinates_gpx(file)
 
 	start = 0
@@ -71,8 +69,6 @@ def main(file: str, api: str):
 		end_path += 100
 
 	new_dir = remove_directions(directions)
-	for i in new_dir:
-		print(i)
 
 	output_first = (
     "<html lang=\"en\">\n"
